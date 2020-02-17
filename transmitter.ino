@@ -1,4 +1,17 @@
-//this is the code that will write the input and binary transmission to the LCD
+/*---------------------------------------------------------------------------------------------------------------------------
+           
+            30/12/18
+            
+            Composed by Max Mccormack for the BT young scientitst project 2019
+            This will encode a line of text into clock and data that can be transmitted via laser to the receiver module
+            It works surprisingly well and fast.
+            Unfortunately we had to use relays to control the lasers. Slow? yes. Noisy? very. Stupid? Kind of.
+            We reached speeds of 40 bits per second, past this the relays started acting up.
+            If I got my hands on some mosfets I'm confident I could have improved the speed significantly - would have 
+            required a lot of tweaking on both receiver and transmitter, but achieveable nontheless.
+  
+  
+--------------------------------------------------------------------------------------------------------------------------*/
 
 // this is the library for the controller board "I2C"
 #include <Wire.h> 
@@ -6,9 +19,8 @@
 // pretty self explanatory
 #include <LiquidCrystal_I2C.h>
 
-//this is the I2C adress, returned by the I2C finder script that is on max's PC if needed
+//Hexadecimal I2C bus address. Should be 39. Check back of IIC backpack module for 4 solderpoints that set address
 const int I2C = 0x27; 
-//yeah its in hexadecimal. In decimal this is 39. Why? Ask sunfounder
 
 #define Clock 3
 #define Data 4
@@ -16,13 +28,13 @@ const int I2C = 0x27;
 //---------------------------------------------------------------------------
 
 
-const char *message = "Hello all"; // message to be sent
+const char *message = "BT Young Scientist"; // message to be sent
 
 
 //---------------------------------------------------------------------------
 
 //defining the pins for the LCD (from the I2C (a type of bus))
-LiquidCrystal_I2C lcd(I2C,16,2); //16 char 2 rows
+LiquidCrystal_I2C lcd(I2C,20,4); //20 char 4 rows
 
 void setup(){
   //define output pins
@@ -40,7 +52,7 @@ void setup(){
   lcd.clear();
   lcd.print(message);
 
-  //print progress
+  //print progress as fraction on lcd
   lcd.setCursor(2, 2);
   lcd.print(strlen(message));
   lcd.setCursor(0, 2);
@@ -58,7 +70,7 @@ void setup(){
     lcd.cursor();
 
     for (int bitc = 0; bitc < 8; bitc++) {                         //bitc is bit counter
-      bool tbit = tbyte & (0x80 >> bitc);                   //not sure what this is
+      bool tbit = tbyte & (0x80 >> bitc);                          //core line. Took ages to figure out. Goddamit.
 
       digitalWrite(DATA, tbit);
       delay((1000 / TX_RATE) / 2);
@@ -80,11 +92,8 @@ void setup(){
   digitalWrite(TX_DATA, LOW);
 }
     
-
-
-  
 }
 
 void loop(){
-  
+  //dunno why I left this here. Force of Habit I guess.
 }
