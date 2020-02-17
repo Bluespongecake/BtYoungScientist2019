@@ -1,24 +1,23 @@
-/*---------------------------------------------------------------------/
+/*---------------------------------------------------------------------------------------------------------------------------/
     
-    This code was made by Max McCormack for the BT young scientist project.
-
+    30/25/18
+    
+    This code was made by Max McCormack for the BT young scientist project 2019.
+    Recieves clock and data laser signal in two photodiodes.
+    Accepts unicode char bytes and displays recieved text on LCD. Maximum 16 chars (limited by LCD size)
+    Improvement: refine to use just one laser for both clock and data.
     Schematic of 2 receivers in google drive folder. (32K ohms)
-    
-    As with the transmitter, this took a long time to make as I did not know
-    much about coding, especially in C.
 
-    
-
-/---------------------------------------------------------------------*/
+/--------------------------------------------------------------------------------------------------------------------------*/
 
 //libraries
 #include <LiquidCrystal_I2C.h>
 #include <Wire.h>
 
 //define LCD parameters
-LiquidCrystal_I2C lcd(0x27, 16, 2);
+LiquidCrystal_I2C lcd(0x27, 16, 2);//make sure I2C address is correct - check on LCD IIC backpack module
 
-//define LED indicator pins
+//define LED indicator pins - looks cool and good for debugging / testing.
 #define ClockLED 12
 #define DataLED 13
 
@@ -33,11 +32,11 @@ volatile bool LCDupdate = true;
 volatile bool rbit = 0;
 
 //remember
-//clock = A0
-//data = A1
+//clock = A0  (LCD)
+//data = A1   (LCD)
 
 void setup() {
-  Serial.begin(9600);//for debugging - comment out if unused
+  //Serial.begin(9600);//for debugging - comment out if unused
 
   //initiate LCD
   lcd.init();
@@ -49,7 +48,7 @@ void setup() {
   digitalWrite(ClockLED, HIGH);
   digitalWrite(DataLED, HIGH);
   lcd.setCursor(0,1);
-  lcd.print("confirm transfer");
+  lcd.print("confirm transfer"); //cool startup sequence.
   delay(2000);
   digitalWrite(DataLED, LOW);
   digitalWrite(ClockLED, LOW);
@@ -57,8 +56,8 @@ void setup() {
   delay(100);
 
   strcpy(message, ""); //set message to null
-  
 }
+
 void ClockUp(){       //guess when this runs
   Serial.println("1");
   digitalWrite(ClockLED, HIGH);
