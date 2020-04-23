@@ -5,6 +5,8 @@ Transmits 16 characters via clock and data lasers from one to the other (one way
 Just a demonstration project, but cool nonetheless.
 Could have been made faster, better, more robust, further range etc. with better materials, but I made do.
 
+How I made the hardware: <a href= "https://www.instructables.com/id/Laser-Transmission-With-Arduinos/" > Instructable </a>
+
 Will post schematics later
 In the mean time heres a random image of a dog.
 
