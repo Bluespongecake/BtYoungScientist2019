@@ -7,7 +7,7 @@ Could have been made faster, better, more robust, further range etc. with better
 
 How I made the hardware: <a href= "https://www.instructables.com/id/Laser-Transmission-With-Arduinos/" > Instructable </a>
 
-Will post schematics later
-In the mean time heres a random image of a dog.
+Schematics:
 
-![alt text](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F-b7ndmrdsKGI%2FTWB53z9rf-I%2FAAAAAAAAA58%2FHRbkPkricOg%2Fs1600%2Ffde.jpg&f=1&nofb=1)
+![alt text](https://content.instructables.com/ORIG/F76/RFZH/K9ACQ27Q/F76RFZHK9ACQ27Q.jpg?auto=webp&frame=1&fit=bounds&md=773fbd0845b5c0a9b2896b50ad9cd90a)
+![alt text](https://content.instructables.com/ORIG/FCU/90UO/K9ACQ28T/FCU90UOK9ACQ28T.jpg?auto=webp&frame=1&fit=bounds&md=7caef158556401a7204a9ba4bd588bf2)
