@@ -20,7 +20,8 @@ Brian Freeland on <a href= "https://twitter.com/BFreelandDCU/status/108347086958
 ![alt text](https://content.instructables.com/ORIG/FCU/90UO/K9ACQ28T/FCU90UOK9ACQ28T.jpg?auto=webp&frame=1&fit=bounds&md=7caef158556401a7204a9ba4bd588bf2)
 ![alt text](https://content.instructables.com/ORIG/FDI/X7ZH/K9ACQ3WF/FDIX7ZHK9ACQ3WF.png?auto=webp&frame=1&width=331&height=1024&fit=bounds&md=9981e9c00840f88cadc6537f625117c0)
 
-<h1> Project Poster </h1?
+<h1> Project Poster </h1>
+
 ![alt text](https://content.instructables.com/ORIG/FEP/H3BH/KEX4H0H7/FEPH3BHKEX4H0H7.png?auto=webp&frame=1&width=1024&height=1024&fit=bounds&md=28c4f25abb15539f5333680a0e85c511)
 
 
